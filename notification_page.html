@@ -1,0 +1,131 @@
+<html>
+<head>
+    <title>Notifications</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            border-bottom: 1px solid #ddd;
+        }
+        .header i {
+            font-size: 24px;
+            margin-right: 16px;
+        }
+        .header h1 {
+            font-size: 20px;
+            margin: 0;
+        }
+        .notification {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            border-bottom: 1px solid #ddd;
+            background-color: #e0e0e0;
+            border-radius: 8px;
+            margin: 8px;
+        }
+        .notification:last-child {
+            border-bottom: none;
+        }
+        .notification i {
+            font-size: 24px;
+            margin-right: 16px;
+        }
+        .notification .content {
+            flex: 1;
+        }
+        .notification .content strong {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+        .notification .content span {
+            font-size: 14px;
+            color: #555;
+        }
+        .view-all {
+            display: block;
+            text-align: center;
+            padding: 16px;
+            background-color: #e0e0e0;
+            border-radius: 8px;
+            margin: 8px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <i class="fas fa-arrow-left"></i>
+            <h1>Notifications</h1>
+        </div>
+        <div class="notification">
+            <i class="fas fa-user-circle"></i>
+            <div class="content">
+                <strong>Chandra Pal</strong>
+                <span>commented on your post<br>How to take care of your crop</span>
+            </div>
+        </div>
+        <div class="notification">
+            <i class="fas fa-user-circle"></i>
+            <div class="content">
+                <strong>Umesh Patel</strong>
+                <span>posted a new post on<br>Identify the problem with Capsicum</span>
+            </div>
+        </div>
+        <div class="notification">
+            <i class="fas fa-user-circle"></i>
+            <div class="content">
+                <strong>Ravso Chougule</strong>
+                <span>commented on your post<br>How to take care of your crop</span>
+            </div>
+        </div>
+        <div class="notification">
+            <i class="fas fa-user-circle"></i>
+            <div class="content">
+                <strong>Om Prakash</strong>
+                <span>commented on your post<br>How to take care of your crop</span>
+            </div>
+        </div>
+        <div class="notification">
+            <i class="fas fa-user-circle"></i>
+            <div class="content">
+                <strong>Jayachandra Patra</strong>
+                <span>liked your post<br>How to take care of your crop</span>
+            </div>
+        </div>
+        <div class="notification">
+            <i class="fas fa-user-circle"></i>
+            <div class="content">
+                <strong>Hoshiyar Singh</strong>
+                <span>commented on your post<br>How to take care of your crop</span>
+            </div>
+        </div>
+        <a href="#" class="view-all">View all Notifications</a>
+    </div>
+</body>
+</html>

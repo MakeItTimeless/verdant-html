@@ -1,0 +1,163 @@
+<html>
+<head>
+    <title>Fertilizer Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        select, input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .number-input {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .number-input button {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+        .number-input input {
+            width: 50px;
+            text-align: center;
+            border: none;
+            font-size: 1.5em;
+        }
+        .radio-group {
+            display: flex;
+            justify-content: space-around;
+            margin: 10px 0;
+        }
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            font-size: 1em;
+        }
+        .radio-group input {
+            margin-right: 5px;
+        }
+        .fertilizer-card {
+            background-color: #d4f8d4;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        .fertilizer-card h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .fertilizer-card .fertilizer-info {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 10px;
+        }
+        .fertilizer-card .fertilizer-info div {
+            text-align: center;
+        }
+        .fertilizer-card .fertilizer-info div span {
+            display: block;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .fertilizer-card .fertilizer-info div small {
+            display: block;
+            font-size: 0.8em;
+        }
+        .fertilizer-card button {
+            background-color: #00c853;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Choose your crop</h1>
+        <select>
+            <option>Brinjal</option>
+        </select>
+        
+        <h2>Number of crop</h2>
+        <div class="number-input">
+            <button>-</button>
+            <input type="number" value="7" readonly>
+            <button>+</button>
+        </div>
+        
+        <div class="radio-group">
+            <label><input type="radio" name="unit" checked> Acre</label>
+            <label><input type="radio" name="unit"> Hectare</label>
+            <label><input type="radio" name="unit"> Hunta</label>
+        </div>
+        
+        <h2>Fertilizer Calculate</h2>
+        
+        <div class="fertilizer-card">
+            <h3>DAP/MOP/Urea</h3>
+            <div class="fertilizer-info">
+                <div>
+                    <span>53KG</span>
+                    <small>1 1/4 Bag</small>
+                </div>
+                <div>
+                    <span>34KG</span>
+                    <small>1/2 Bag</small>
+                </div>
+                <div>
+                    <span>81KG</span>
+                    <small>1 1/2 Bag</small>
+                </div>
+            </div>
+            <button>Find products</button>
+        </div>
+        
+        <div class="fertilizer-card">
+            <h3>MOP/SSP/Urea</h3>
+            <div class="fertilizer-info">
+                <div>
+                    <span>34KG</span>
+                    <small>1/2 Bag</small>
+                </div>
+                <div>
+                    <span>152KG</span>
+                    <small>3 1/4 Bag</small>
+                </div>
+                <div>
+                    <span>101KG</span>
+                    <small>2 1/2 Bag</small>
+                </div>
+            </div>
+            <button>Find products</button>
+        </div>
+    </div>
+</body>
+</html>

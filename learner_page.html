@@ -1,0 +1,454 @@
+<html>
+  <head>
+    <title>Teacher Search</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: #f5f7fb;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        padding: 20px;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .header h1 {
+        font-size: 24px;
+        margin: 0;
+        color: #2c3e50;
+      }
+      .header p {
+        font-size: 16px;
+        color: #7f8c8d;
+        margin: 0;
+      }
+      .profile-pic {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: url("https://placehold.co/50x50") no-repeat center center;
+        background-size: cover;
+      }
+      .search-bar {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .search-bar input {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-right: 10px;
+      }
+      .search-bar button {
+        background-color: #4a90e2;
+        border: none;
+        padding: 10px;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+      }
+      .search-bar .icons {
+        display: flex;
+        align-items: center;
+      }
+      .search-bar .icons i {
+        font-size: 20px;
+        color: #4a90e2;
+        margin-left: 10px;
+      }
+      .section-title {
+        font-size: 18px;
+        color: #2c3e50;
+        margin: 20px 0 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .section-title i {
+        font-size: 20px;
+        color: #4a90e2;
+      }
+      .card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        margin-right: 10px;
+        text-align: center;
+        width: 150px;
+      }
+      .card img {
+        width: 100%;
+        border-radius: 10px;
+      }
+      .card h3 {
+        font-size: 16px;
+        color: #2c3e50;
+        margin: 10px 0 5px;
+      }
+      .card p {
+        font-size: 14px;
+        color: #7f8c8d;
+        margin: 0;
+      }
+      .cards-container {
+        display: flex;
+        overflow-x: auto;
+      }
+      .institution-card {
+        display: flex;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        margin-right: 10px;
+        width: 100%;
+      }
+      .institution-card img {
+        width: 100px;
+        border-radius: 10px;
+        margin-right: 10px;
+      }
+      .institution-card .details {
+        flex: 1;
+      }
+      .institution-card .details h3 {
+        font-size: 16px;
+        color: #2c3e50;
+        margin: 0 0 5px;
+      }
+      .institution-card .details p {
+        font-size: 14px;
+        color: #7f8c8d;
+        margin: 0;
+      }
+      .institution-card .details .rating {
+        color: #f39c12;
+        margin: 5px 0;
+      }
+      .footer {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: white;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .footer i {
+        font-size: 24px;
+        color: #bdc3c7;
+      }
+      .footer i.active {
+        color: #4a90e2;
+      }
+      .institution-cards-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .institution-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    width: 30%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .institution-card img {
+    display: block;
+    margin: 0 auto 10px;
+  }
+
+  .details {
+    text-align: center;
+  }
+
+  .rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .rating i {
+    color: gold;
+    margin-right: 2px;
+  }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div>
+          <h1>Good evening!</h1>
+          <p>Hardline Scott</p>
+        </div>
+        <div class="profile-pic"></div>
+      </div>
+      <div class="search-bar">
+        <input placeholder="Search your teacher" type="text" />
+        <button>
+          <i class="fas fa-search"> </i>
+        </button>
+        <div class="icons">
+          <i class="fas fa-utensils"> </i>
+        </div>
+      </div>
+      <div class="section-title">
+        <span> Popular Teachers </span>
+        <i class="fas fa-filter"> </i>
+      </div>
+      <div class="cards-container">
+        <div class="card">
+          <img
+            height="150"
+            src="Teacher (1).jpeg"
+            width="150"
+          />
+          <h3>Cassie Valdez</h3>
+          <p>Plant Pathology</p>
+        </div>
+        <div class="card">
+          <img
+            height="150"
+            src="Teacher (2).jpeg"
+            width="150"
+          />
+          <h3>Paul Simons</h3>
+          <p>Molecular Biology</p>
+        </div>
+        <div class="card">
+          <img
+            height="150"
+            src="Teacher (3).jpeg"
+            width="150"
+          />
+          <h3>Graham Oslund</h3>
+          <p>Plant Breeding</p>
+        </div>
+        <div class="card">
+            <img
+              alt="Image of Graham Oslund"
+              height="150"
+              src="Teacher (4).jpeg"
+              width="150"
+            />
+            <h3>Marie</h3>
+            <p>Plant Physiology</p>
+          </div>
+          <div class="card">
+            <img
+              alt="Image of Graham Oslund"
+              height="150"
+              src="Teacher (5).jpeg"
+              width="150"
+            />
+            <h3>Sophie</h3>
+            <p>Plant Taxonomy</p>
+          </div>
+          <div class="card">
+            <img
+              alt="Image of Graham Oslund"
+              height="150"
+              src="Teacher (6).jpeg"
+              width="150"
+            />
+            <h3>Lili</h3>
+            <p>Plant Ecology</p>
+          </div>
+          <div class="card">
+            <img
+              alt="Image of Graham Oslund"
+              height="150"
+              src="Teacher (7).jpeg"
+              width="150"
+            />
+            <h3>Alex</h3>
+            <p>Ethnobotany</p>
+          </div>
+          <div class="card">
+            <img
+              alt="Image of Graham Oslund"
+              height="150"
+              src="Teacher (8).jpeg"
+              width="150"
+            />
+            <h3>Noé</h3>
+            <p>Horticulture</p>
+          </div>
+          <div class="card">
+            <img
+              alt="Image of Graham Oslund"
+              height="150"
+              src="Teacher (9).jpeg"
+              width="150"
+            />
+            <h3>Romy</h3>
+            <p>Paleobotany</p>
+          </div>
+      </div>
+
+      <!-- Popular Institution Wala code -->
+      <div class="section-title">
+        <span>Popular Institution</span>
+        <i class="fas fa-filter"></i>
+      </div>
+      
+      <div class="institution-cards-container">
+        <!-- NIPGR College Card -->
+        <div class="institution-card">
+          <img
+            alt="Image of NIPGR College"
+            height="100"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRPdyjeWYqY2kEMEes6C6EzmcUu_zAY-Wx-Q&s"
+            width="100"
+          />
+          <div class="details">
+            <h3>NIPGR College</h3>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span> (4.5/313) </span>
+            </div>
+            <p>Leading in Bio Science,</p>
+            <p>
+                NIPGR explores CBD’s role in pain management alternatives
+            </p>
+          </div>
+        </div>
+      
+        <!-- IARI College Card -->
+        <div class="institution-card">
+          <img
+            alt="Image of IARI College"
+            height="100"
+            src="https://upload.wikimedia.org/wikipedia/en/7/73/Indian_Agricultural_Research_Institute_Logo.png"
+            width="100"
+          />
+          <div class="details">
+            <h3>IARI College</h3>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span> (4.5/313) </span>
+            </div>
+            <p>IARI is renowned for its Bio Science program,</p>
+            <p>
+                offering unique insights into how CBD can transform pain management strategies.
+            </p>
+          </div>
+        </div>
+
+      
+        <!-- JNU College Card -->
+        <div class="institution-card">
+          <img
+            alt="Image of JNU College"
+            height="100"
+            src="https://pbs.twimg.com/media/GAgQfbPbsAADBVf?format=jpg&name=large"
+            width="100"
+          />
+          <div class="details">
+            <h3>JNU College</h3>
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span> (4.5/313) </span>
+            </div>
+            <p>JNU stands out in Bio Science</p>
+            <p>
+                with its cutting-edge research on CBD’s potential to revolutionize pain management solutions.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+
+          <!-- <div class="details">
+            <h3>NIPGR College</h3>
+            <div class="rating">
+              <i class="fas fa-star"> </i>
+              <i class="fas fa-star"> </i>
+              <i class="fas fa-star"> </i>
+              <i class="fas fa-star"> </i>
+              <i class="fas fa-star-half-alt"> </i>
+              <span> (4.5/313) </span>
+            </div>
+            <p>Bio Science</p>
+            <p>
+              Studying how CBD awareness and availability as it related to pain
+              management alternatives.
+            </p>
+          </div> -->
+
+          <!-- <div class="details">
+            <h3>NIPGR College</h3>
+            <div class="rating">
+              <i class="fas fa-star"> </i>
+              <i class="fas fa-star"> </i>
+              <i class="fas fa-star"> </i>
+              <i class="fas fa-star"> </i>
+              <i class="fas fa-star-half-alt"> </i>
+              <span> (4.5/313) </span>
+            </div>
+            <p>Bio Science</p>
+            <p>
+              Studying how CBD awareness and availability as it related to pain
+              management alternatives.
+            </p>
+          </div> -->
+
+          <!-- <div class="details">
+            <h3>NIPGR College</h3>
+            <div class="rating">
+              <i class="fas fa-star"> </i>
+              <i class="fas fa-star"> </i>
+              <i class="fas fa-star"> </i>
+              <i class="fas fa-star"> </i>
+              <i class="fas fa-star-half-alt"> </i>
+              <span> (4.5/313) </span>
+            </div>
+            <p>Bio Science</p>
+            <p>
+              Studying how CBD awareness and availability as it related to pain
+              management alternatives.
+            </p>
+          </div> -->
+      </div>
+    </div>
+    <div class="footer">
+      <i class="fas fa-compass active"> </i>
+      <i class="fas fa-stream"> </i>
+      <i class="fas fa-book"> </i>
+    </div>
+  </body>
+</html>
